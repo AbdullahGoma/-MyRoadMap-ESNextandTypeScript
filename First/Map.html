@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <script>
+      // var arr = [10, 123, 12, 1];
+      // console.log(arr.map(e => e));
+
+      // arr.map(e => e + 3).forEach(item => console.log(item));
+
+      var myMap = new Map();
+
+       myMap.set("key1", "value associated with a string");
+       myMap.set("keyObj", "value");
+       myMap.set("key1", "new value");
+       myMap.set("keyFunc", "value associated with a keyFunc");
+
+       console.log(myMap.size);; // 3
+
+       console.log(myMap.get("key1")); // new value
+       console.log(myMap.get("keyObj"));
+       console.log(myMap.get("keyFunc"));
+
+       let StudentGrades = new Map();
+
+       StudentGrades.set("Ahmed", 60);
+       StudentGrades.set("Ali", 80);
+       StudentGrades.set("Mahmoud", 90);
+
+       console.log(StudentGrades.get("Ahmed"));
+
+       let stdGrades = [
+         ['Ali', {
+           js: "Fair",
+           angular: "Excellent",
+           reactujs: "Good"
+         }],
+         ['Mohammed', {
+           js: "Good",
+           angular: "Excellent",
+           reactujs: "Very Good"
+         }]
+       ];
+
+       var stdGradesMap = new Map(stdGrades);
+
+       console.log(...stdGradesMap);
+       console.log(...stdGradesMap.keys());
+       console.log(...stdGradesMap.values());
+
+       for(let item of stdGradesMap.values()){
+         console.log(item);
+       }
+
+       for(let item of stdGradesMap.values()){
+         console.log(item.js);
+       }
+
+       for(let [key, val] of stdGradesMap){
+         console.log(`Key: ${key}, and it's value: ${val}`);
+
+       }
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

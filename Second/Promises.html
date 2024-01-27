@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <h1>Difference between synchronous and asynchronous</h1>
+    <button type="button" name="button" onclick="getProduct()">Get Product</button>
+
+
+    <script>
+
+      // function myFun() {
+      //   setTimeout(function () {
+      //     console.log("I am setTimeout and finished now!");
+      //   }, 2000);
+      // }
+      //
+      //
+      // function userFun() {
+      //   console.log("I am function that should run after setTimeout");
+      // }
+      //
+      // myFun();
+      // userFun();
+      //
+
+      // var schMsgPromise = new Promise(function (resolve, reject) {
+      //   setTimeout(() => {
+      //     let usrName = prompt("Enter Your Name");
+      //     if(usrName.length > 3){
+      //       resolve(usrName);
+      //     }else{
+      //       reject("Not Valid Username");
+      //     }
+      //     // console.log("Timed task finished");
+      //   }, 3000);
+      // });
+      //
+      // schMsgPromise
+      // .then((usrName) => {
+      //   console.log("Welcome, " + usrName);
+      //   console.log("Task Finished");
+      // })
+      // .catch((err) => {
+      //   console.log("Error: " + err);
+      // });
+
+      // schMsgPromise
+      // .then((userName) => {
+      //   console.log("Welcome, " + userName);
+      //   console.log("Task Finished");
+      // }, ((err) => {
+      //   console.log("Error: " + err);
+      // }));
+
+
+      // function regValidation() {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       let usrName = prompt("Enter Your Name");
+      //       if(usrName.length > 3){
+      //         resolve(usrName);
+      //         // console.log("In Resolve");
+      //       }else{
+      //         reject("Not Valid Username");
+      //         // console.log("In Reject");
+      //       }
+      //       // console.log("Timed task finished");
+      //     }, 3000);
+      //   });
+      //   // return schMsgPromise;
+      // }
+      //
+      // regValidation()
+      // .then((usrName) => {
+      //   console.log("Welcome, " + usrName);
+      //   console.log("Task Finished");
+      // })
+      // .catch((err) => {
+      //   console.log("Error: " + err);
+      // });
+
+
+      // function getProduct(url) {
+      //   return new Promise((resolve, reject) => {
+      //     var xhr = new XMLHttpRequest();
+      //     xhr.open('GET', url);
+      //     xhr.onload = function(){
+      //       if (xhr.status == 200){
+      //         resolve(xhr.response);
+      //       }else{
+      //         reject(xhr.statusText);
+      //       }
+      //     }
+      //     xhr.send();
+      //   });
+      // }
+      //
+      // getProduct('https://reqres.in/api/products/1')
+      // .then(function (response) {
+      //   console.log("Success!", response);
+      // }, function (error) {
+      //   console.error("Failed!", error);
+      // });
+
+      // Code Here Will executed before Ajax
+
+
+
+      // Promise Chaining (implicit)
+
+      // function gg() {
+      //   return new Promise(function (resolve, reject) { // call resolve => then, call reject => catch
+      //     console.log("Hello");
+      //     resolve(1);
+      //   }).then((count) => {
+      //     console.log("Msg." + count);
+      //     return new Promise(function (resolve, reject) {
+      //       console.log("Hell2");
+      //       resolve(2);
+      //     });
+      //   }).then((count) => {
+      //     console.log("Msg." + count); // implicit promise
+      //     return 3;
+      //   }).then((count) => {
+      //     console.log("Msg." + count);
+      //     console.log("End");
+      //   });
+      // }
+      //
+      // gg();
+
+
+
+
+      // Promise Chaining (Explicit)
+      // function gg() {
+      //   return new Promise(function (resolve, reject) { // call resolve => then, call reject => catch
+      //     setTimeout(() => {
+      //       console.log("Hello");
+      //       resolve(1);
+      //     }, 3000);
+      //   }).then((count) => {
+      //     console.log("Msg." + count);
+      //     return new Promise(function (resolve, reject) { // Explicit Promise
+      //       setTimeout(() => {
+      //         console.log("Hell2");
+      //         resolve(2);
+      //       }, 3000);
+      //     });
+      //   }).then((count) => {
+      //     console.log("Msg." + count);
+      //     return new Promise(function (resolve, reject) {
+      //       setTimeout(() => {
+      //         console.log("Hell3");
+      //         resolve(3);
+      //       }, 3000);
+      //     });
+      //   }, () => {
+      //     console.log("Error"); // will stop Chaining
+      //   }).then((count) => {
+      //     console.log("Msg." + count);
+      //     console.log("End");
+      //   });
+      // }
+
+      // gg();
+
+
+      // Promise race, all => take array of Promise
+
+      // Will Run ALl After Three Minutes
+      Promise.all([
+        new Promise( (resolve, reject) => setTimeout(() => resolve(1), 1000)),
+        new Promise( (resolve, reject) => setTimeout(() => resolve(2), 3000)),
+        new Promise( (resolve, reject) => setTimeout(() => resolve(3), 2000))
+      ]).then((values) => {
+        console.log("Testing Promise.all");
+        console.log(values);
+      });
+
+      // Fast Server 
+      Promise.race([
+        new Promise( (resolve, reject) => setTimeout(() => resolve(1), 1000)),
+        new Promise( (resolve, reject) => setTimeout(() => resolve(2), 3000)),
+        new Promise( (resolve, reject) => setTimeout(() => resolve(3), 2000))
+      ]).then(values => {
+        console.log(values);
+      });
+
+
+    </script>
+
+  </body>
+</html>

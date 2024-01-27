@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <script>
+      function sum(n1 = 0, n2 = 0) {
+        // n1 = n1 || 0
+        return n1 + n2;
+      }
+
+      sum(3, 7);
+
+      console.log(sum(5)); // 5
+
+      // For of
+
+      var arr = [20, 10, 2, 1, 50];
+
+      for(let i in arr){
+        console.log(i);
+        console.log(arr[i]);
+      }
+
+      for(let i of arr){
+        console.log(i); // value
+      }
+
+      
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

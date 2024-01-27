@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <script>
+
+      // function sum(n1, n2) {
+      //   return n1 + n2;
+      // }
+      //
+      // let sum2 = (n1, n2) => n1 + n2;
+      // console.log(sum(10, 20) + "  " + sum2(10, 20));
+      //
+      // // Higher Order Functions => take function as parameter
+      // setTimeout(function () {
+      //   console.log("Hello");
+      // }, 1000);
+      //
+      // setTimeout(() => {
+      //   console.log("Hi");
+      // }, 1000);
+      //
+      // let numArr = [10, 20, 2, 1, 33, 3];
+      // let sortedArr = numArr.sort(); // Sort alphabetic
+      //
+      // console.log(sortedArr);
+      //
+      // let numA = [10, 20, 2, 1, 33, 3];
+      // let sortedA = numA.sort((a, b) => a - b); // Sort
+      //
+      // console.log(sortedA);
+      //
+      //
+      // let sayHello = (name) => 'Hello ' + name;
+      //
+      // let name = prompt("Enter Your Name: ");
+      // console.log(sayHello(name));
+
+
+      // let numArr = [34, 10, 20, 21, 2, 1, 33, 3, 55];
+      // let foundElem = numArr.find(elem => elem > 20);
+      // console.log(foundElem);
+      //
+      // let foundElems = numArr.filter(elem => elem > 20);
+      // console.log(foundElems);
+
+      class person
+      {
+        name = "";
+        age = 0;
+        constructor(name){
+          this.name = name;
+          this.age = 0;
+          // setInterval(function () {
+          //   this.age++; // not accessable 
+          // }, 1000);
+
+          setInterval(() => this.age++ , 1000); // work with it as expression not object
+        }
+
+
+      }
+
+      let p1 = new person("ALI");
+
+      setTimeout(function () {
+        console.log(p1.age);
+      }, 3500);
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

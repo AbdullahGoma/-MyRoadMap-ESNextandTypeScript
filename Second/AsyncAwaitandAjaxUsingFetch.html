@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <button type="button" name="button" onclick="getProduct('https://reqres.in/api/products/1')">Get Product</button>
+
+    <button type="button" name="button" onclick="insertProduct()">Insert Product</button>
+
+
+    <div id="prod">
+
+    </div>
+
+
+
+    <script>
+
+
+      // async function f1() {
+      //   console.log("Action need functions");
+      //   return 1; // Will return Implicit promise, resolve 1
+      // }
+      //
+      // f1().then((res) => console.log(res));
+
+      // async function f() {
+      //   let testPromise = new Promise((resolve, reject) => {
+      //     setTimeout(() => resolve("done!"), 2000);
+      //   });
+      //   testPromise.then((result) => {
+      //     console.log("In Async Function, result of promise: " + result);
+      //     // return result;
+      //   })
+      //
+      //   let res = await testPromise;
+      //   return res;
+      // }
+      //
+      // f().then((res) => {
+      //   console.log("Finished");
+      //   console.log(res);
+      // });
+
+
+
+
+
+
+      // Ajax Using Fetch
+
+      // function getProduct(url) {
+      //   fetch(url)   // Return Promise
+      //   .then(function (response) {
+      //     console.log(response);
+      //     if(response.status == 200)
+      //         return (response.json());
+      //   })
+      //   .then(function (resJSON) {
+      //     console.log(resJSON);
+      //     for(let prod of resJSON.data){
+      //       document.getElementById("prod").innerHTML += prod.name + ",<br>";
+      //     }
+      //   });
+      //   alert("Request sent...");
+      // }
+
+
+      function insertProduct() {
+        let product = {
+          "Name" : "Any",
+          "Price": "many"
+         }
+        fetch('https://reqres.in/api/products/post', { method: 'POST', body: JSON.stringify(product), headers: {
+          'content-type': 'application/json'
+        } })   // Return Promise
+        .then((response) => {
+          console.log(response);
+          if(response.status == 201)
+              return (response.json());
+        })
+        .then((resJSON) => {
+          console.log(resJSON);
+        });
+        alert("Request sent...");
+      }
+
+
+
+    </script>
+
+  </body>
+</html>

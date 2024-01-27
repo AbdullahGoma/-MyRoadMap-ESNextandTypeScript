@@ -1,0 +1,24 @@
+node -v
+
+npm install typescript
+
+
+tsc -v
+
+
+//in ps
+
+Get-ExecutionPolicy -List
+
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+
+tsc HelloTS.ts
+
+
+tsc --watch HelloTS.ts
+
+ tsc --module es2020 Circle.ts   
+
+tsc --out main.js main.ts
+
+

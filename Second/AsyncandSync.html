@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <h1>Difference between synchronous and asynchronous</h1>
+    <button type="button" name="button" onclick="getProduct()">Get Product</button>
+
+
+    <script>
+
+
+      // synchronous
+      // function getProduct() {
+      //   var xhr = new XMLHttpRequest();
+      //
+      //   var url = "https://reqres.in/api/products/1";
+      //   xhr.open("get", url, false); // false makes the call to be sync
+      //   xhr.send(); // will block the rest of code until it execute
+      //
+      //
+      //   if (xhr.status == 200){
+      //     var res = xhr.responseText;
+      //     console.log(res);
+      //   }
+      //
+      //   console.log("this is alert after ajax call");
+      // }
+
+
+      // Real-life example Ajax
+      // asynchronous
+      // function getProduct() {
+      //   var xhr = new XMLHttpRequest();
+      //   xhr.onreadystatechange = function(){
+      //     if (xhr.readyState == 4 && xhr.status == 200){
+      //       var res = xhr.responseText;
+      //       console.log(res);
+      //     }
+      //   }
+      //   var url = "https://reqres.in/api/products/1";
+      //   xhr.open("get", url, true); // true makes the call to be async
+      //   xhr.send();
+      //   // console.log(xhr.responseText);
+      //   console.log("this is alert after ajax call");
+      // }
+
+
+      // Event
+      // function getProduct() {
+      //   var xhr = new XMLHttpRequest();
+      //   xhr.onreadystatechange = function(){
+      //     if (xhr.readyState == 4 && xhr.status == 200){
+      //       var res = xhr.responseText;
+      //       alert(res);
+      //     }
+      //   }
+      //   var url = "https://reqres.in/api/products/1";
+      //   xhr.open("get", url, true); // true makes the call to be async
+      //   xhr.send();
+      //   // console.log(xhr.responseText);
+      //   alert("this is alert after ajax call");
+      // }
+
+      // Call Back Function
+      // setTimeout(() => {
+      //   console.log("Message After 3 Seconds");
+      // }, 3000);
+      //
+      //
+      // console.log("After setTimeout");
+
+
+      // callback
+      // function scheduledMsg(msg, timeInSec, callback) {
+      //   setTimeout(() => {
+      //     console.log(msg);
+      //     callback();
+      //   }, timeInSec * 1000);
+      // }
+      //
+      // scheduledMsg("Hello Async", 3, () => {
+      //   console.log("Scheduled Msg Printed");
+      // });
+
+
+      // callback => callback => callback => ... => callback hell => fixed by promise
+
+      
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
